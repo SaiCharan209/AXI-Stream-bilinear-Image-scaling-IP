@@ -1,21 +1,0 @@
-2026-07-03T12:01:28.639078200255-12:01:28 **** Incremental Build of configuration Debug for project Im_scale ****
-000-make all 
-000-'Building file: ../src/IM.c'
-000-'Invoking: ARM v8 gcc compiler'
-000-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/IM.o" -IC:/Users/katku/OneDrive/Desktop/Image_Scaling_FPGA/Image_scaling_Vitis/Image_scaling_top/export/Image_scaling_top/sw/Image_scaling_top/standalone_psu_cortexa53_0/bspinclude/include -MMD -MP -MF"src/IM.d" -MT"src/IM.o" -o "src/IM.o" "../src/IM.c"
-000-'Finished building: ../src/IM.c'
-000-' '
-000-'Building target: Im_scale.elf'
-000-'Invoking: ARM v8 gcc linker'
-000-aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/katku/OneDrive/Desktop/Image_Scaling_FPGA/Image_scaling_Vitis/Image_scaling_top/export/Image_scaling_top/sw/Image_scaling_top/standalone_psu_cortexa53_0/bsplib/lib -o "Im_scale.elf"  ./src/IM.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-000-'Finished building target: Im_scale.elf'
-000-' '
-000-'Invoking: ARM v8 Print Size'
-000-aarch64-none-elf-size Im_scale.elf  |tee "Im_scale.elf.size"
-000-   text	   data	    bss	    dec	    hex	filename
-000-  42060	   2192	  23260	  67512	  107b8	Im_scale.elf
-000-'Finished building: Im_scale.elf.size'
-000-' '
-00255-
-12:01:30 Build Finished (took 2s.347ms)
-
