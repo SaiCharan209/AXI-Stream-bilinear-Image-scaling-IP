@@ -46,12 +46,11 @@ module image_scale_ip #(
     reg [X_IN_BITS+FRAC_BITS-1:0] X_in_calc;
     reg [X_IN_BITS+FRAC_BITS-1:0] Y_in_calc;
 
-    wire [X_IN_BITS-1:0] x0_raw = (X_in_calc >> FRAC_BITS);
-    wire [Y_IN_BITS-1:0] y0_raw = (Y_in_calc >> FRAC_BITS);
+    wire [X_IN_BITS-1:0] x0_1 = (X_in_calc >> FRAC_BITS);
+    wire [Y_IN_BITS-1:0] y0_1= (Y_in_calc >> FRAC_BITS);
 
-    // Boundary clamping to prevent out-of-bounds line buffer addressing
-    wire [X_IN_BITS-1:0] x0 = (x0_raw >= W_IN-1) ? (W_IN-1) : x0_raw[X_IN_BITS-1:0];
-    wire [Y_IN_BITS-1:0] y0 = (y0_raw >= H_IN-1) ? (H_IN-1) : y0_raw[Y_IN_BITS-1:0];
+    wire [X_IN_BITS-1:0] x0 = (x0_1>= W_IN-1) ? (W_IN-1) : x0_1[X_IN_BITS-1:0];
+    wire [Y_IN_BITS-1:0] y0 = (y0_1>= H_IN-1) ? (H_IN-1) : y0_1[Y_IN_BITS-1:0];
     wire [X_IN_BITS-1:0] x1 = (x0 >= W_IN-1)     ? (W_IN-1) : x0 + 1;
     wire [Y_IN_BITS-1:0] y1 = (y0 >= H_IN-1)     ? (H_IN-1) : y0 + 1;
 
