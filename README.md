@@ -23,6 +23,6 @@ Designed a 6-stage image scaling pipeline and streaming the image using line buf
 
 ## Architecture Overview
 
-![Architecture] ()
+![Architecture](Block_design_IMS.png)
 
 ## Synthesis and timing reports
