@@ -16,6 +16,13 @@ Designed a 6-stage image scaling pipeline and streaming the image using line buf
 
 - optimization of multipliers in the circuit
 
+- Fixed point arithmetic for bilinear interpolation
+  used 8 bit fractional part for good accuracy in the pixel intensity values and using lesser hardware for image scaling.
+  
 ---
+
+## Architecture Overview
+
+![Architecture] ()
 
 ## Synthesis and timing reports
