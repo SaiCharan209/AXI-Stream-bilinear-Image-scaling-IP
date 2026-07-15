@@ -1,6 +1,6 @@
 # AXI-Stream-bilinear-Image-scaling-IP
-Designed a 6-stage image scaling pipeline and streaming the image using line buffers method reducing the memory utilization
-
+Designed a 6-stage bilinear image scaling pipeline and streaming the image using line buffers method reducing the memory utilization.
+Successfully verified on zynq Ultrscale + FPGA SOC with minimal resource utilization.
 ---
 
 ## Key Design Features
@@ -28,4 +28,5 @@ Designed a 6-stage image scaling pipeline and streaming the image using line buf
 ![Synthesis](Synthesis_report.png)
 
 ## DMA (Direct memory access)
-![DMA](
+
+![DMA](DMA.png)
