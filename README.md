@@ -10,8 +10,8 @@ Successfully verified on zynq Ultrscale + FPGA SOC with minimal resource utiliza
 - **3-line buffer architecture** <br>
   Used a 3 line buffer architecture for image streaming using AXI-4 stream which reduces the on-chip memory utilization compared to full frame buffering.
 
-- **Input and output FIFO** <br>
-  Used input and output FIFO buffers to avoid stalling of the image pipeline if the DMA is slowing processing the data to the memory again.
+- **output FIFO** <br>
+  Used output FIFO buffers to avoid stalling of the image pipeline if the DMA is slowing processing the data to the memory again.
 
 - **Video Direct memory access** <br>
   we use VDMA to stream the data from the DDR memory in the Zynq UltraScale FPGA because the normal DMA doesn't know where the row ends ,but VDMA streams the image data as a row wise packet compared to DMA which sends the data as a whole packet as it doesn't recognise image and data separately.
