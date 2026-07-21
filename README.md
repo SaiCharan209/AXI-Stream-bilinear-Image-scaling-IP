@@ -32,7 +32,8 @@ Here as you can see the utilization reduced drastically for a 870 x 566 image an
 ![Synthesis](Synthesis_report.png)
 
 ## DMA (Direct memory access)
-Here the main architecture we used is DMA , by which without any CPU intervention we can directly fetch data from the DDR RAM and also write to it, in the absence of DMA if CPU communicates with the memory for fetching it would give so many idle cycles for the CPU not moving to the next instruction, if we use DMA the CPU can do the other instructions in the mean time and there would almost no idle cycles, which is the main advantage of DMA architecture.
+Here the main architecture we used is DMA , by which without any CPU intervention we can directly fetch data from the DDR RAM and also write to it, in the absence of DMA if CPU communicates with the memory for fetching it would give so many idle cycles for the CPU not moving to the next instruction, if we use DMA the CPU can do the other instructions in the mean time and there would almost no idle cycles, which is the main advantage of DMA architecture and also achieved a good PSNR(Peak signal to noise ratio) and SSIM of the scaled output image.
+
 
 ![DMA](DMA.png)
 
