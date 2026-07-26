@@ -41,13 +41,18 @@ Used AXI VDMA and internal FIFOs to ensure precise streaming of the image to the
 ## Synthesis and timing reports
 Here as you can see the utilization reduced drastically for a 870 x 566 image and streaming it through the line buffer , as the BRAM usage is very less according to the image size we are using.
 
-![Synthesis](Image_Scaling_/Synthesis_report.png)
+<p align="center">
+  <img src="Image_Scaling_/Synthesis_report.png" width="900">
+</p>
+
 
 ## DMA (Direct memory access)
 Here the main architecture we used is DMA , by which without any CPU intervention we can directly fetch data from the DDR RAM and also write to it, in the absence of DMA if CPU communicates with the memory for fetching it would give so many idle cycles for the CPU not moving to the next instruction, if we use DMA the CPU can do the other instructions in the mean time and there would almost no idle cycles, which is the main advantage of DMA architecture and also achieved a good PSNR(Peak signal to noise ratio) and SSIM of the scaled output image.
 
 
-![DMA](Image_Scaling_/DMA.png)
+<p align="center">
+  <img src="Image_Scaling_/DMA.png" width="800">
+</p>
 
 ## Testing and verification
 Verified the design by deploying it on Zynq ultrascale+ ZCU104 FPGA Soc and successfully verified the scaled output with the simulated output. Max clock frequency at which the design can run is about 330 Mhz which corresponds to a impressive 400 fps video streaming which is industry standard in high quality cameras.
