@@ -24,22 +24,30 @@ Successfully verified on zynq Ultrscale + FPGA SOC with minimal resource utiliza
 ## Architecture Overview
 Used AXI VDMA and internal FIFOs to ensure precise streaming of the image to the IP for bilinear scaling, the output FIFO is to maintain the speed of the IP, as most of the time the writing speed of the IP is more than the reading speed of the VDMA , so it is important to buffer the data if not stalls will occur in the pipeline due to which there would be a lot of time loss in the design.
 
-![Architecture](Block_design_IMS.png)
+![Architecture](Image_Scaling_/Block_design_IMS.png)
+
+## Grayscale image results
+
+| Input Image(740x740) | Output Image(1200x1150) |
+|:---:|:---:|
+| <img src="Image_Scaling_/RGB_M.png" width="400"> | <img src="Image_Scaling_/scaled_output.png" width="400"> |
 
 ## Scaled RGB image results
 
-
+| Input Image(800x566) | Output Image(900x700) |
+|:---:|:---:|
+| <img src="Image_Scaling_/RGB_M.png" width="400"> | <img src="Image_Scaling_/scaled_output.png" width="400"> |
 
 ## Synthesis and timing reports
 Here as you can see the utilization reduced drastically for a 870 x 566 image and streaming it through the line buffer , as the BRAM usage is very less according to the image size we are using.
 
-![Synthesis](Synthesis_report.png)
+![Synthesis](Image_Scaling_/Synthesis_report.png)
 
 ## DMA (Direct memory access)
 Here the main architecture we used is DMA , by which without any CPU intervention we can directly fetch data from the DDR RAM and also write to it, in the absence of DMA if CPU communicates with the memory for fetching it would give so many idle cycles for the CPU not moving to the next instruction, if we use DMA the CPU can do the other instructions in the mean time and there would almost no idle cycles, which is the main advantage of DMA architecture and also achieved a good PSNR(Peak signal to noise ratio) and SSIM of the scaled output image.
 
 
-![DMA](DMA.png)
+![DMA](Image_Scaling_/DMA.png)
 
 ## Testing and verification
 Verified the design by deploying it on Zynq ultrascale+ ZCU104 FPGA Soc and successfully verified the scaled output with the simulated output. Max clock frequency at which the design can run is about 330 Mhz which corresponds to a impressive 400 fps video streaming which is industry standard in high quality cameras.
