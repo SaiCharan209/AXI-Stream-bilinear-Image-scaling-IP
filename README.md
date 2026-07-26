@@ -26,6 +26,10 @@ Used AXI VDMA and internal FIFOs to ensure precise streaming of the image to the
 
 ![Architecture](Block_design_IMS.png)
 
+## Scaled RGB image results
+
+
+
 ## Synthesis and timing reports
 Here as you can see the utilization reduced drastically for a 870 x 566 image and streaming it through the line buffer , as the BRAM usage is very less according to the image size we are using.
 
