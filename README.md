@@ -28,9 +28,9 @@ Used AXI VDMA and internal FIFOs to ensure precise streaming of the image to the
 
 ## Grayscale image results
 
-| Input Image(740x740) | Output Image(1200x1150) |
+| Input Image(740x740) | Output Image(900x900) |
 |:---:|:---:|
-| <img src="Image_Scaling_/RGB_M.png" width="400"> | <img src="Image_Scaling_/scaled_output.png" width="400"> |
+| <img src="Image_Scaling_/Grayscale.png" width="400"> | <img src="Image_Scaling_/output.png" width="450"> |
 
 ## Scaled RGB image results
 
